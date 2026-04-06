@@ -11,13 +11,7 @@
     <link rel="canonical" href="https://juku-hp-navi.com/">
 
     <!-- ファビコン設定 -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/icon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <meta name="theme-color" content="#1e3a8a">
+    <link rel="icon" href="/favicon.ico">
 
     <!-- OGP設定 (SNSシェア用) -->
     <meta property="og:type" content="website">
@@ -190,6 +184,7 @@
         <div class="max-w-5xl mx-auto">
             <h3 class="text-3xl sm:text-4xl font-black text-blue-900 mb-16 underline decoration-blue-200 decoration-8 underline-offset-8 uppercase tracking-tighter">料金体系</h3>
             <div class="grid md:grid-cols-2 gap-8 text-left">
+                <!-- サブスク型 -->
                 <div class="bg-blue-900 rounded-[2.5rem] p-10 text-white shadow-2xl relative overflow-hidden flex flex-col">
                     <div class="absolute top-0 right-0 bg-blue-500 px-6 py-2 font-black text-[10px] uppercase tracking-widest">キャッシュフロー重視</div>
                     <h4 class="text-2xl font-black mb-1 italic tracking-tight uppercase">サブスク型</h4>
@@ -199,30 +194,53 @@
                         <span class="text-blue-300 font-bold ml-2 text-sm">〜 /月(税込)</span>
                     </div>
                     <ul class="space-y-4 mb-10 text-slate-100 font-bold flex-grow">
-                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> 初期費用 0円</li>
+                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> 初期制作費用 0円</li>
                         <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> キャッシュフローを最適化</li>
-                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> 勝てるサイト構成</li>
+                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> 塾講師による勝てるサイト構成</li>
                         <li class="flex items-center gap-3 text-sm text-blue-300 opacity-80 font-bold"><span class="text-blue-300 font-black text-lg">✔</span> 保守・変更は含まれません</li>
                     </ul>
                     <a href="#contact" class="block w-full py-4 bg-white text-blue-900 rounded-2xl font-black text-center hover:bg-blue-50 transition shadow-xl">サブスクで始める</a>
                 </div>
-                <div class="bg-white rounded-[2.5rem] p-10 border-4 border-slate-200 flex flex-col hover:border-blue-900 transition shadow-sm">
-                    <h4 class="text-2xl font-black text-blue-900 mb-1 italic tracking-tight uppercase">一括購入型</h4>
-                    <p class="text-slate-400 font-bold text-xs mb-8 italic">追加費用なし. 一生使える資産に</p>
-                    <div class="mb-10 text-center md:text-left">
-                        <span class="text-5xl font-black italic tracking-tighter text-blue-900">¥99,000</span>
-                        <span class="text-slate-400 font-bold ml-2 text-sm">〜 (税込)</span>
+
+                <!-- 一括購入型（セール強調版） -->
+                <div class="bg-white rounded-[2.5rem] p-10 border-4 border-blue-900 ring-4 ring-blue-900/10 flex flex-col shadow-2xl relative overflow-hidden transform scale-105 z-10">
+                    <div class="absolute top-8 right-[-40px] bg-red-600 text-white px-12 py-2 font-black text-xs uppercase tracking-widest rotate-45 shadow-xl">50% OFF</div>
+                    
+                    <div class="flex items-center gap-2 mb-1">
+                        <h4 class="text-2xl font-black text-blue-900 italic tracking-tight uppercase">一括購入型</h4>
+                        <span class="bg-red-600 text-white text-[10px] font-black px-2 py-0.5 rounded shadow-sm animate-pulse">期間限定</span>
                     </div>
+                    <p class="text-slate-400 font-bold text-xs mb-8 italic">追加費用なし. 一生使える資産に</p>
+                    
+                    <div class="mb-10 text-center md:text-left">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="text-slate-400 text-lg font-bold line-through">¥198,000</span>
+                            <span class="bg-blue-100 text-blue-700 text-[10px] font-black px-2 py-0.5 rounded">99,000円お得！</span>
+                        </div>
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-6xl font-black italic tracking-tighter text-blue-900">¥99,000</span>
+                            <span class="text-slate-400 font-bold text-sm">〜 (税込)</span>
+                        </div>
+                        <div class="mt-4 p-3 bg-red-50 border border-red-100 rounded-2xl">
+                            <p class="text-red-600 text-xs font-black flex items-center justify-center gap-2">
+                                📅 <span class="text-sm">2026年6月30日(火)まで</span>の特別価格
+                            </p>
+                        </div>
+                    </div>
+
                     <ul class="space-y-4 mb-10 flex-grow text-slate-600 font-bold">
-                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-blue-500 font-black text-lg">✔</span> 維持・管理費 永久0円</li>
-                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-blue-500 font-black text-lg">✔</span> 全5〜8ページのプロ仕様</li>
-                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-blue-500 font-black text-lg">✔</span> 勝てるサイト構成</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-400 opacity-60 font-bold"><span class="text-slate-400 font-black text-lg">✔</span> 納品後の支払いはありません</li>
+                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-blue-500 font-black text-lg">✔</span> 維持費・管理費 永久0円</li>
+                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-blue-500 font-black text-lg">✔</span> 全5〜8ページのプロ仕様構成</li>
+                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-blue-500 font-black text-lg">✔</span> 塾講師の視点による勝てるサイト構成</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-400 opacity-60 font-bold"><span class="text-slate-400 font-black text-lg">✔</span> 納品後、継続的な支払いはありません</li>
                     </ul>
-                    <a href="#contact" class="block w-full py-4 bg-slate-900 text-white rounded-2xl font-black text-center hover:bg-slate-800 transition shadow-lg shadow-slate-900/30">一括購入を申し込む</a>
+                    
+                    <a href="#contact" class="block w-full py-5 bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-2xl font-black text-center text-xl hover:shadow-2xl transition transform hover:-translate-y-1 shadow-lg shadow-blue-900/30">
+                        特別価格で申し込む
+                    </a>
                 </div>
             </div>
-            <div class="mt-12 text-slate-500 font-bold text-sm italic">
+            <div class="mt-16 text-slate-500 font-bold text-sm italic">
                 注：ドメイン代はお客様のご負担となります。
             </div>
         </div>
