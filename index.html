@@ -42,6 +42,8 @@
             background: linear-gradient(90deg, #1e3a8a, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            /* 最後の文字が切れないように右側にわずかな余白を追加 */
+            padding-right: 0.1em;
         }
         .bg-dot-pattern {
             background-color: #ffffff;
@@ -66,8 +68,10 @@
     <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
         <div class="max-w-7xl mx-auto px-4 h-16 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-blue-900 rounded flex items-center justify-center text-white font-black text-lg">J</div>
-                <span class="font-black text-blue-900 tracking-tighter text-base sm:text-lg">塾HPナビ | <span class="text-blue-500 font-bold">学習塾専門ホームページ制作所</span></span>
+                <div class="w-8 h-8 bg-blue-900 rounded flex items-center justify-center text-white font-black text-lg shrink-0">J</div>
+                <span class="font-black text-blue-900 tracking-tighter text-sm sm:text-lg whitespace-nowrap">
+                    塾HPナビ | <span class="text-blue-500 font-bold text-[10px] sm:text-sm">学習塾専門ホームページ制作所</span>
+                </span>
             </div>
             <div class="hidden md:flex gap-6 text-slate-600 font-bold text-sm">
                 <a href="#examples" class="hover:text-blue-900 transition">制作事例</a>
@@ -75,7 +79,7 @@
                 <a href="#pricing" class="hover:text-blue-900 transition">料金体系</a>
                 <a href="#flow" class="hover:text-blue-900 transition">流れ</a>
             </div>
-            <a href="#contact" class="bg-blue-900 text-white px-4 py-2 rounded-full font-bold text-xs sm:text-sm hover:bg-blue-800 transition shadow-lg shadow-blue-900/20">
+            <a href="#contact" class="bg-blue-900 text-white px-4 py-2 rounded-full font-bold text-xs sm:text-sm hover:bg-blue-800 transition shadow-lg shadow-blue-900/20 shrink-0">
                 無料相談
             </a>
         </div>
@@ -87,7 +91,7 @@
             <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4 tracking-tight">業界No.1へ</h2>
             <h1 class="text-4xl sm:text-7xl font-black mb-8 leading-[1.2] tracking-tighter">
                 塾HPナビ <br>
-                <span class="text-gradient text-2xl sm:text-7xl">学習塾専門ホームページ制作所</span>
+                <span class="text-gradient text-3xl sm:text-7xl">学習塾専門ホームページ制作所</span>
             </h1>
             <p class="text-xl sm:text-2xl font-bold text-slate-600 mb-12 leading-relaxed">
                 驚きの安さで、<br class="sm:hidden">地域No.1のデザインに
@@ -164,7 +168,7 @@
                     <div class="text-4xl mb-6">💰</div>
                     <h4 class="text-xl font-black mb-4 leading-snug">業界水準を破壊する<br class="hidden sm:block">圧倒的な低コスト</h4>
                     <p class="text-blue-100 text-sm font-bold leading-relaxed">
-                        学習塾の制作に長けた、現役の教育者が技術を提供。制作会社を通さない直取引だからこそ、圧倒的な低価格でホームページを作成します。
+                        広告費や豪華なオフィスを一切持たず、現役の教育者が技術を提供。制作会社を通さない直取引だからこそ、他社の10分の1の価格設定を実現しました。
                     </p>
                 </div>
                 <!-- 強み3 -->
@@ -229,12 +233,12 @@
                     </div>
 
                     <ul class="space-y-4 mb-10 flex-grow text-slate-600 font-bold">
-                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> 維持費・管理費 永久0円</li>
-                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> 全5〜8ページのプロ仕様</li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> 納品後、継続的な支払いはありません</li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> プロ仕様のデザイン</li>
                         <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> 塾講師の視点による構成</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-400 opacity-60 font-bold text-slate-400"><span class="text-slate-400 font-black text-lg">✔</span> 納品後、継続的な支払いはありません</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-400 opacity-60 font-bold text-slate-400"><span class="text-slate-400 font-black text-lg">✔</span> 保守・変更は含まれません</li>
                     </ul>
-                    
+                    　
                     <a href="#contact" class="block w-full py-5 bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-2xl font-black text-center text-xl hover:shadow-2xl transition transform hover:-translate-y-1 shadow-lg shadow-blue-900/30">
                         特別価格で申し込む
                     </a>
@@ -338,7 +342,7 @@
                     <p class="text-slate-500 text-xs font-bold leading-relaxed text-slate-500 font-bold">塾講師ならではの感性で、地域No.1のデザインを構築します。</p>
                 </div>
                 <!-- Step 4 -->
-                <div class="bg-blue-50 p-8 rounded-3xl shadow-lg border border-blue-100 h-full flex flex-col items-center ring-2 ring-blue-500/20 text-center text-center text-center">
+                <div class="bg-blue-50 p-8 rounded-3xl shadow-lg border border-blue-100 h-full flex flex-col items-center ring-2 ring-blue-500/20 text-center text-center text-center text-center text-center text-center">
                     <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-black mb-6 shadow-lg shadow-orange-500/30 font-black text-white">4</div>
                     <h5 class="text-lg font-black mb-4 text-blue-900 font-black italic text-blue-900">納品・運用</h5>
                     <p class="text-slate-500 text-xs font-bold leading-relaxed text-slate-500 font-bold">最短期間で公開。納品後は一生の資産として自由に運用いただけます。</p>
@@ -348,31 +352,31 @@
     </section>
 
     <!-- お問い合わせセクション (LINE + フォーム) -->
-    <section id="contact" class="py-24 bg-white px-4 border-t border-slate-100 text-center text-center text-center">
+    <section id="contact" class="py-24 bg-white px-4 border-t border-slate-100 text-center text-center text-center text-center text-center text-center">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
                 <h3 class="text-4xl sm:text-5xl font-black text-blue-900 mb-6 italic tracking-tighter uppercase text-center font-black text-blue-900">Contact</h3>
                 <p class="text-lg font-bold text-slate-500 text-center text-slate-500">LINEまたはフォームより、<br class="sm:hidden">お気軽にご相談ください。</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-start text-center md:text-left text-center md:text-left text-center md:text-left">
+            <div class="grid lg:grid-cols-2 gap-12 items-start text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
                 <!-- LINE -->
-                <div class="bg-slate-50 rounded-[2.5rem] p-10 text-center border border-slate-100 h-full flex flex-col justify-center text-center text-center">
-                    <div class="w-20 h-20 bg-[#06C755] rounded-3xl mx-auto flex items-center justify-center text-4xl text-white mb-8 shadow-xl text-white text-white">💬</div>
+                <div class="bg-slate-50 rounded-[2.5rem] p-10 text-center border border-slate-100 h-full flex flex-col justify-center text-center text-center text-center text-center text-center text-center">
+                    <div class="w-20 h-20 bg-[#06C755] rounded-3xl mx-auto flex items-center justify-center text-4xl text-white mb-8 shadow-xl text-white text-white text-white text-white">💬</div>
                     <h4 class="text-2xl font-black text-blue-900 mb-4 font-black text-blue-900">LINEでクイック相談</h4>
                     <p class="text-slate-600 font-bold text-sm mb-10 leading-relaxed text-slate-600 font-bold">
                         一番人気の連絡方法です。山田本人に直接つながります。<br>
                         「だいたいの見積もりが知りたい」など、<br class="sm:hidden">一言いただければ即レスいたします。
                     </p>
-                    <a href="https://lin.ee/YHbTKYn" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#06C755] text-white px-8 py-5 rounded-full text-xl font-black shadow-2xl hover:scale-105 transition active:scale-95 shadow-emerald-500/20 text-white font-black text-white text-white">
+                    <a href="https://lin.ee/YHbTKYn" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#06C755] text-white px-8 py-5 rounded-full text-xl font-black shadow-2xl hover:scale-105 transition active:scale-95 shadow-emerald-500/20 text-white font-black text-white text-white text-white text-white">
                         LINEで友達追加する
                     </a>
                 </div>
 
                 <!-- フォーム -->
-                <div class="bg-white rounded-[2.5rem] p-10 border-2 border-slate-100 shadow-sm relative text-left text-left text-left">
-                    <h4 class="text-2xl font-black text-blue-900 mb-8 flex items-center gap-3 font-black font-black font-black">
-                        <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-sm font-bold text-blue-600 font-bold text-blue-600 font-bold">✉</span>
+                <div class="bg-white rounded-[2.5rem] p-10 border-2 border-slate-100 shadow-sm relative text-left text-left text-left text-left text-left text-left">
+                    <h4 class="text-2xl font-black text-blue-900 mb-8 flex items-center gap-3 font-black font-black font-black font-black font-black font-black">
+                        <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-sm font-bold text-blue-600 font-bold text-blue-600 font-bold text-blue-600 font-bold text-blue-600 font-bold">✉</span>
                         お問い合わせフォーム
                     </h4>
                     
@@ -396,7 +400,7 @@
                             <textarea name="内容" required rows="5" placeholder="ご相談内容をご記入ください。" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold text-sm focus:bg-white focus:border-blue-500 transition font-bold"></textarea>
                         </div>
                         <div id="form-message" class="hidden p-4 rounded-xl font-bold text-sm text-center"></div>
-                        <button type="submit" id="submit-btn" class="w-full bg-blue-900 text-white py-5 rounded-xl font-black text-lg shadow-xl hover:bg-blue-800 transition active:scale-[0.98] flex items-center justify-center gap-3 font-black text-white font-black text-white text-white">
+                        <button type="submit" id="submit-btn" class="w-full bg-blue-900 text-white py-5 rounded-xl font-black text-lg shadow-xl hover:bg-blue-800 transition active:scale-[0.98] flex items-center justify-center gap-3 font-black text-white font-black text-white text-white text-white text-white text-white">
                             <span>この内容で送信する</span>
                             <div id="loading-spinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                         </button>
@@ -407,13 +411,13 @@
     </section>
 
     <!-- フッター -->
-    <footer class="bg-slate-50 py-12 px-4 border-t border-slate-200 text-center md:text-left text-center md:text-left text-center md:text-left">
+    <footer class="bg-slate-50 py-12 px-4 border-t border-slate-200 text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-blue-900 rounded flex items-center justify-center text-white font-black text-[10px] text-white text-white">N</div>
-                <span class="font-black text-slate-900 text-lg italic tracking-tighter uppercase font-black text-slate-900 text-slate-900">塾HPナビ | 学習塾専門ホームページ制作所</span>
+                <div class="w-6 h-6 bg-blue-900 rounded flex items-center justify-center text-white font-black text-[10px] text-white text-white text-white text-white">N</div>
+                <span class="font-black text-slate-900 text-lg italic tracking-tighter uppercase font-black text-slate-900 text-slate-900 text-slate-900 text-slate-900">塾HPナビ | 学習塾専門ホームページ制作所</span>
             </div>
-            <div class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 font-bold text-slate-400 font-bold">
+            <div class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 font-bold text-slate-400 font-bold text-slate-400 font-bold text-slate-400 font-bold">
                 &copy; 2026 塾HPナビ | 学習塾専門ホームページ制作所.
             </div>
         </div>
