@@ -42,7 +42,6 @@
             background: linear-gradient(90deg, #1e3a8a, #3b82f6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* 最後の文字が切れないように右側にわずかな余白を追加 */
             padding-right: 0.1em;
         }
         .bg-dot-pattern {
@@ -57,8 +56,37 @@
         .animate-bar {
             animation: slideIn 1.5s ease-out forwards;
         }
-        input, textarea {
+        input, textarea, select {
             outline: none;
+        }
+        .zero-risk-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #f0fdf4, #dcfce7);
+            border: 1.5px solid #86efac;
+            color: #166534;
+            font-weight: 900;
+            font-size: 0.78rem;
+            padding: 6px 14px;
+            border-radius: 999px;
+            letter-spacing: 0.05em;
+        }
+        .flow-connector {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-size: 1.5rem;
+            font-weight: 900;
+        }
+        .datetime-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        @media (max-width: 480px) {
+            .datetime-row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -88,14 +116,26 @@
     <!-- 1. ヒーローセクション -->
     <section class="pt-40 pb-24 px-4 bg-dot-pattern border-b border-slate-100 text-center">
         <div class="max-w-5xl mx-auto">
+            <!-- ゼロリスクバッジ -->
+            <div class="flex justify-center mb-6">
+                <span class="zero-risk-badge">
+                    🛡️ まず「あなたのお試しHP」を制作 — ご確認してからご購入できます
+                </span>
+            </div>
+
             <h2 class="text-2xl sm:text-3xl font-bold text-blue-900 mb-4 tracking-tight">業界No.1へ</h2>
             <h1 class="text-4xl sm:text-7xl font-black mb-8 leading-[1.2] tracking-tighter">
                 塾HPナビ <br>
                 <span class="text-gradient text-2.5xl sm:text-7xl">学習塾専門ホームページ制作所</span>
             </h1>
-            <p class="text-xl sm:text-2xl font-bold text-slate-600 mb-12 leading-relaxed">
+            <p class="text-xl sm:text-2xl font-bold text-slate-600 mb-4 leading-relaxed">
                 驚きの安さで、<br class="sm:hidden">地域No.1のデザインに
             </p>
+            <p class="text-sm sm:text-base font-bold text-slate-400 mb-12 leading-relaxed">
+                お申し込み後 <span class="text-blue-700">1週間で「あなたの塾のお試しHP」を無料制作</span>。<br>
+                実際にご自身のHPをご覧いただいてから、購入を判断できます。
+            </p>
+
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="#examples" class="bg-blue-900 text-white px-12 py-5 rounded-2xl text-xl font-black shadow-2xl hover:bg-blue-800 transition transform hover:-translate-y-1">制作事例を見る</a>
                 <a href="#pricing" class="bg-white text-blue-900 border-2 border-blue-900 px-12 py-5 rounded-2xl text-xl font-black hover:bg-blue-50 transition">料金体系を見る</a>
@@ -171,12 +211,12 @@
                         教育業界のサイト作成に特化した現役の教育者が技術を提供。制作会社を通さない直取引だからこそ、驚くべき価格設定を実現しました。
                     </p>
                 </div>
-                <!-- 強み3 -->
+                <!-- 強み3（新コピー：ゼロリスク） -->
                 <div class="bg-white/10 backdrop-blur-md p-10 rounded-[2.5rem] border border-white/10 hover:bg-white/20 transition">
-                    <div class="text-4xl mb-6">📂</div>
-                    <h4 class="text-xl font-black mb-4 leading-snug">納品後、先生の<br class="hidden sm:block">「一生の資産」に</h4>
+                    <div class="text-4xl mb-6">🛡️</div>
+                    <h4 class="text-xl font-black mb-4 leading-snug">見てから買える<br class="hidden sm:block">ゼロリスク方式</h4>
                     <p class="text-blue-100 text-sm font-bold leading-relaxed">
-                        契約を縛る保守費用は一切いただきません。一括購入型なら、資産として一生使い続けることが可能。先生の教室が持つ魅力を永続的な集客基盤へと変えます。
+                        お申し込み後1週間以内に「あなたの塾のお試しHP」を無料制作し、オンラインMTGでご確認いただけます。「いいね！」と思ってからご購入。制作物を見ずに決断するリスクはゼロです。
                     </p>
                 </div>
             </div>
@@ -195,12 +235,13 @@
                     <p class="text-blue-300 font-bold text-xs mb-8">月々の負担を抑えたい経営者様におすすめ</p>
                     <div class="mb-10 text-center md:text-left">
                         <span class="text-5xl font-black italic tracking-tighter text-white">¥6,600</span>
-                        <span class="text-blue-300 font-bold ml-2 text-sm text-blue-300">〜 /月(税込)</span>
+                        <span class="text-blue-300 font-bold ml-2 text-sm">〜 /月(税込)</span>
                     </div>
-                    <ul class="space-y-4 mb-10 text-slate-100 font-bold flex-grow text-slate-100">
+                    <ul class="space-y-4 mb-10 text-slate-100 font-bold flex-grow">
                         <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> 初期制作費用 0円</li>
                         <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> キャッシュフローを最適化</li>
                         <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> 塾講師による勝てるサイト構成</li>
+                        <li class="flex items-center gap-3 text-sm font-bold"><span class="text-green-400 font-black text-lg">✔</span> デモサイト確認後に契約</li>
                         <li class="flex items-center gap-3 text-sm text-blue-300 opacity-80 font-bold"><span class="text-blue-300 font-black text-lg">✔</span> 保守・変更は含まれません</li>
                     </ul>
                     <a href="#contact" class="block w-full py-4 bg-white text-blue-900 rounded-2xl font-black text-center hover:bg-blue-50 transition shadow-xl">サブスクで始める</a>
@@ -236,7 +277,8 @@
                         <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> 納品後、継続的な支払いはありません</li>
                         <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> プロ仕様のデザイン</li>
                         <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> 塾講師の視点による構成</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-400 opacity-60 font-bold text-slate-400"><span class="text-slate-400 font-black text-lg">✔</span> 保守・変更は含まれません</li>
+                        <li class="flex items-center gap-3 text-sm font-bold text-slate-600"><span class="text-blue-500 font-black text-lg">✔</span> デモサイト確認後に購入</li>
+                        <li class="flex items-center gap-3 text-sm text-slate-400 opacity-60 font-bold"><span class="text-slate-400 font-black text-lg">✔</span> 保守・変更は含まれません</li>
                     </ul>
                     　
                     <a href="#contact" class="block w-full py-5 bg-gradient-to-r from-blue-900 to-blue-700 text-white rounded-2xl font-black text-center text-xl hover:shadow-2xl transition transform hover:-translate-y-1 shadow-lg shadow-blue-900/30">
@@ -255,7 +297,7 @@
         <div class="max-w-4xl mx-auto text-center">
             <div class="text-center mb-16">
                 <h3 class="text-3xl sm:text-4xl font-black text-blue-900 mb-6 tracking-tighter text-center">料金比較</h3>
-                <p class="text-lg font-bold text-slate-600 text-center text-slate-600">制作会社と比較した、<br class="sm:hidden">5年間のコスト削減効果（税込）</p>
+                <p class="text-lg font-bold text-slate-600 text-center">制作会社と比較した、<br class="sm:hidden">5年間のコスト削減効果（税込）</p>
             </div>
             <div class="space-y-10 relative text-left text-slate-400 font-bold">
                 <div class="relative">
@@ -286,7 +328,7 @@
     </section>
 
     <!-- 6. 製作者の説明セクション -->
-    <section class="py-24 bg-slate-900 text-white px-4 overflow-hidden border-b border-white/5 text-slate-100">
+    <section class="py-24 bg-slate-900 text-white px-4 overflow-hidden border-b border-white/5">
         <div class="max-w-6xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 lg:gap-20 items-center">
                 <div class="relative flex justify-center lg:justify-start">
@@ -296,111 +338,230 @@
                     <div class="absolute -bottom-10 -right-10 w-48 h-48 sm:w-64 sm:h-64 bg-blue-600 rounded-full blur-3xl opacity-20 -z-10"></div>
                 </div>
                 <div class="text-center lg:text-left">
-                    <div class="inline-block px-4 py-1 mb-6 text-[10px] sm:text-xs font-black tracking-widest text-blue-400 border border-blue-400 rounded-full uppercase text-blue-400 font-black">
+                    <div class="inline-block px-4 py-1 mb-6 text-[10px] sm:text-xs font-black tracking-widest text-blue-400 border border-blue-400 rounded-full uppercase">
                         製作者について
                     </div>
-                    <h3 class="text-3xl sm:text-4xl font-black mb-4 italic text-white text-white">
+                    <h3 class="text-3xl sm:text-4xl font-black mb-4 italic text-white">
                         山田 将生 <span class="text-lg font-bold not-italic text-blue-400 ml-2">Masaki Yamada</span>
                     </h3>
-                    <p class="text-blue-300 font-bold text-sm mb-8 leading-relaxed text-blue-300 text-blue-300">
+                    <p class="text-blue-300 font-bold text-sm mb-8 leading-relaxed">
                         会員制難関受験専門塾elio 中学受験・社会科主任。<br>
                         教壇に立ち高い合格実績を誇る傍ら、社内DXや顧客管理システムの構築を手掛ける。
                     </p>
                     <div class="bg-white/5 rounded-3xl p-8 border border-white/10 relative text-left text-slate-300">
-                        <div class="text-blue-500 text-4xl absolute -top-4 -left-2 opacity-50 font-serif leading-none">“</div>
+                        <div class="text-blue-500 text-4xl absolute -top-4 -left-2 opacity-50 font-serif leading-none">"</div>
                         <p class="text-slate-300 font-bold text-sm sm:text-base leading-relaxed italic mb-6">
                             学習塾のホームページは、お子さんを預ける保護者様と最初に接する大切な場所です。制作会社に頼めば大きな初期投資に加え定額の保守費用が発生しますが、私は塾が稼いだ利益は生徒や先生へ還元されるべきだと考えています。現場を知る私だからこそできる、塾経営に寄り添ったWeb基盤を提案します。
                         </p>
-                        <div class="text-blue-500 text-4xl absolute -bottom-10 -right-2 opacity-50 font-serif leading-none rotate-180">“</div>
+                        <div class="text-blue-500 text-4xl absolute -bottom-10 -right-2 opacity-50 font-serif leading-none rotate-180">"</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 7. ご利用の流れセクション -->
+    <!-- 7. ご利用の流れセクション（新5ステップフロー） -->
     <section id="flow" class="py-24 bg-slate-50 px-4 text-center">
         <div class="max-w-7xl mx-auto">
-            <h3 class="text-3xl sm:text-4xl font-black text-blue-900 mb-16 underline decoration-blue-200 decoration-8 underline-offset-8 tracking-tighter text-center">ご利用の流れ</h3>
-            <div class="grid md:grid-cols-4 gap-8 relative">
+            <h3 class="text-3xl sm:text-4xl font-black text-blue-900 mb-4 underline decoration-blue-200 decoration-8 underline-offset-8 tracking-tighter text-center">ご利用の流れ</h3>
+            <p class="text-slate-500 font-bold text-sm mb-16 text-center">
+                実際の制作物を<span class="text-blue-700 font-black">見てから</span>ご購入いただけます。購入前のご負担はゼロです。
+            </p>
+
+            <div class="flex flex-col md:flex-row items-stretch gap-0 max-w-6xl mx-auto">
+
                 <!-- Step 1 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 h-full flex flex-col items-center text-center">
-                    <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center font-black mb-6 shadow-lg shadow-blue-900/20 font-black text-white">1</div>
-                    <h5 class="text-lg font-black mb-4 text-blue-900 font-black">お問い合わせ</h5>
-                    <p class="text-slate-500 text-xs font-bold leading-relaxed text-slate-500 font-bold">LINEまたはフォームよりご連絡ください。担当の山田よりご返信いたします。</p>
+                <div class="flex-1 bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center font-black mb-4 shadow-lg shadow-blue-900/20">1</div>
+                    <div class="text-2xl mb-3">📝</div>
+                    <h5 class="text-base font-black mb-3 text-blue-900">お問い合わせ</h5>
+                    <p class="text-slate-500 text-xs font-bold leading-relaxed">
+                        フォームまたはLINEよりご連絡ください。ご希望のMTG日時（候補）もあわせてご記入を。
+                    </p>
                 </div>
+
+                <div class="flow-connector py-2 md:py-0 md:px-1 flex-shrink-0 rotate-90 md:rotate-0">›</div>
+
                 <!-- Step 2 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 h-full flex flex-col items-center text-center">
-                    <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center font-black mb-6 shadow-lg shadow-blue-900/20 font-black text-white">2</div>
-                    <h5 class="text-lg font-black mb-4 text-blue-900 font-black italic">情報記入</h5>
-                    <p class="text-slate-500 text-xs font-bold leading-relaxed text-slate-500 font-bold">塾の魅力を専用シートに。スマホからでも簡単に記入いただけます。</p>
+                <div class="flex-1 bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center font-black mb-4 shadow-lg shadow-blue-900/20">2</div>
+                    <div class="text-2xl mb-3">🤖</div>
+                    <h5 class="text-base font-black mb-3 text-blue-900">お試しHP制作</h5>
+                    <p class="text-slate-500 text-xs font-bold leading-relaxed">
+                        AIを活用して<span class="text-blue-700 font-black">1週間以内</span>に「あなたの塾のお試しHP」を無料制作します。
+                    </p>
                 </div>
-                <!-- Step 3 -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 h-full flex flex-col items-center text-center">
-                    <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center font-black mb-6 shadow-lg shadow-blue-900/20 font-black text-white">3</div>
-                    <h5 class="text-lg font-black mb-4 text-blue-900 font-black italic text-blue-900">サイト作成</h5>
-                    <p class="text-slate-500 text-xs font-bold leading-relaxed text-slate-500 font-bold">塾講師ならではの感性で、地域No.1のデザインを構築します。</p>
+
+                <div class="flow-connector py-2 md:py-0 md:px-1 flex-shrink-0 rotate-90 md:rotate-0">›</div>
+
+                <!-- Step 3（オンラインMTG・強調） -->
+                <div class="flex-1 bg-blue-50 p-8 rounded-3xl shadow-sm border-2 border-blue-200 ring-2 ring-blue-500/10 flex flex-col items-center text-center relative">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] font-black px-3 py-0.5 rounded-full uppercase tracking-widest whitespace-nowrap">ここで確認！</div>
+                    <div class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center font-black mb-4 shadow-lg shadow-blue-600/30">3</div>
+                    <div class="text-2xl mb-3">💻</div>
+                    <h5 class="text-base font-black mb-3 text-blue-900">オンラインMTG</h5>
+                    <p class="text-slate-500 text-xs font-bold leading-relaxed">
+                        できあがった「あなたのお試しHP」をご一緒に確認。気になる点はこの場でご相談ください。<br>
+                        <span class="text-blue-700 font-black">納得してからご購入</span>いただけます。
+                    </p>
                 </div>
-                <!-- Step 4 -->
-                <div class="bg-blue-50 p-8 rounded-3xl shadow-lg border border-blue-100 h-full flex flex-col items-center ring-2 ring-blue-500/20 text-center text-center text-center text-center text-center text-center">
-                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-black mb-6 shadow-lg shadow-orange-500/30 font-black text-white">4</div>
-                    <h5 class="text-lg font-black mb-4 text-blue-900 font-black italic text-blue-900">納品・運用</h5>
-                    <p class="text-slate-500 text-xs font-bold leading-relaxed text-slate-500 font-bold">最短期間で公開。納品後は一生の資産として自由に運用いただけます。</p>
+
+                <div class="flow-connector py-2 md:py-0 md:px-1 flex-shrink-0 rotate-90 md:rotate-0">›</div>
+
+                <!-- Step 4（ご購入） -->
+                <div class="flex-1 bg-white p-8 rounded-3xl shadow-sm border border-slate-100 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 bg-blue-900 text-white rounded-full flex items-center justify-center font-black mb-4 shadow-lg shadow-blue-900/20">4</div>
+                    <div class="text-2xl mb-3">✅</div>
+                    <h5 class="text-base font-black mb-3 text-blue-900">ご購入</h5>
+                    <p class="text-slate-500 text-xs font-bold leading-relaxed">
+                        「いいね！」と思っていただけたら、その時点でご購入をお願いします。
+                    </p>
+                </div>
+
+                <div class="flow-connector py-2 md:py-0 md:px-1 flex-shrink-0 rotate-90 md:rotate-0">›</div>
+
+                <!-- Step 5（修正・納品） -->
+                <div class="flex-1 bg-blue-50 p-8 rounded-3xl shadow-lg border border-blue-100 ring-2 ring-blue-500/20 flex flex-col items-center text-center">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-black mb-4 shadow-lg shadow-orange-500/30">5</div>
+                    <div class="text-2xl mb-3">🚀</div>
+                    <h5 class="text-base font-black mb-3 text-blue-900">修正・納品</h5>
+                    <p class="text-slate-500 text-xs font-bold leading-relaxed">
+                        MTGのFBをもとに最終調整。最短で公開し、一生の資産として自由に運用いただけます。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- お問い合わせセクション (LINE + フォーム) -->
-    <section id="contact" class="py-24 bg-white px-4 border-t border-slate-100 text-center text-center text-center text-center text-center text-center">
+    <section id="contact" class="py-24 bg-white px-4 border-t border-slate-100 text-center">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h3 class="text-4xl sm:text-5xl font-black text-blue-900 mb-6 italic tracking-tighter uppercase text-center font-black text-blue-900">Contact</h3>
-                <p class="text-lg font-bold text-slate-500 text-center text-slate-500">LINEまたはフォームより、<br class="sm:hidden">お気軽にご相談ください。</p>
+                <h3 class="text-4xl sm:text-5xl font-black text-blue-900 mb-6 italic tracking-tighter uppercase">Contact</h3>
+                <p class="text-lg font-bold text-slate-500">LINEまたはフォームより、<br class="sm:hidden">お気軽にご相談ください。</p>
+                <div class="mt-6 inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-800 text-xs font-black px-5 py-2 rounded-full">
+                    🛡️ まず「あなたのお試しHP」を制作。ご確認いただいてから購入をご判断いただけます。
+                </div>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12 items-start text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
+            <div class="grid lg:grid-cols-2 gap-12 items-start text-center md:text-left">
                 <!-- LINE -->
-                <div class="bg-slate-50 rounded-[2.5rem] p-10 text-center border border-slate-100 h-full flex flex-col justify-center text-center text-center text-center text-center text-center text-center">
-                    <div class="w-20 h-20 bg-[#06C755] rounded-3xl mx-auto flex items-center justify-center text-4xl text-white mb-8 shadow-xl text-white text-white text-white text-white">💬</div>
-                    <h4 class="text-2xl font-black text-blue-900 mb-4 font-black text-blue-900">LINEでクイック相談</h4>
-                    <p class="text-slate-600 font-bold text-sm mb-10 leading-relaxed text-slate-600 font-bold">
+                <div class="bg-slate-50 rounded-[2.5rem] p-10 text-center border border-slate-100 h-full flex flex-col justify-center">
+                    <div class="w-20 h-20 bg-[#06C755] rounded-3xl mx-auto flex items-center justify-center text-4xl text-white mb-8 shadow-xl">💬</div>
+                    <h4 class="text-2xl font-black text-blue-900 mb-4">LINEでクイック相談</h4>
+                    <p class="text-slate-600 font-bold text-sm mb-10 leading-relaxed">
                         一番人気の連絡方法です。山田本人に直接つながります。<br>
                         「だいたいの見積もりが知りたい」など、<br class="sm:hidden">一言いただければ即レスいたします。
                     </p>
-                    <a href="https://lin.ee/YHbTKYn" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#06C755] text-white px-8 py-5 rounded-full text-xl font-black shadow-2xl hover:scale-105 transition active:scale-95 shadow-emerald-500/20 text-white font-black text-white text-white text-white text-white">
+                    <a href="https://lin.ee/YHbTKYn" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#06C755] text-white px-8 py-5 rounded-full text-xl font-black shadow-2xl hover:scale-105 transition active:scale-95 shadow-emerald-500/20">
                         LINEで友達追加する
                     </a>
                 </div>
 
                 <!-- フォーム -->
-                <div class="bg-white rounded-[2.5rem] p-10 border-2 border-slate-100 shadow-sm relative text-left text-left text-left text-left text-left text-left">
-                    <h4 class="text-2xl font-black text-blue-900 mb-8 flex items-center gap-3 font-black font-black font-black font-black font-black font-black">
-                        <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-sm font-bold text-blue-600 font-bold text-blue-600 font-bold text-blue-600 font-bold text-blue-600 font-bold">✉</span>
+                <div class="bg-white rounded-[2.5rem] p-10 border-2 border-slate-100 shadow-sm relative text-left">
+                    <h4 class="text-2xl font-black text-blue-900 mb-8 flex items-center gap-3">
+                        <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-blue-600 text-sm font-bold">✉</span>
                         お問い合わせフォーム
                     </h4>
                     
                     <form id="contact-form" class="space-y-6">
                         <div>
-                            <label class="block text-xs font-black text-blue-900 uppercase tracking-widest mb-2 font-black">塾名・会社名 <span class="text-slate-400 font-bold ml-2">※任意</span></label>
+                            <label class="block text-xs font-black text-blue-900 uppercase tracking-widest mb-2">塾名・会社名 <span class="text-slate-400 font-bold ml-2">※任意</span></label>
                             <input type="text" name="塾名" placeholder="例：個別指導の〇〇塾" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold text-sm focus:bg-white focus:border-blue-500 transition">
+                        </div>
+
+                        <!-- 情報源URL（新規） -->
+                        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
+                            <p class="text-xs font-black text-blue-900 uppercase tracking-widest">
+                                🔗 現在のHP・ブログ・SNS等のURL
+                            </p>
+                            <p class="text-[11px] text-slate-500 font-bold -mt-1">
+                                お試しHP制作の参考情報としてご提供ください。複数ある場合はすべてご記入ください。
+                            </p>
+                            <textarea name="参考URL" rows="3" placeholder="例：https://〇〇-juku.com&#10;https://ameblo.jp/〇〇&#10;https://www.instagram.com/〇〇" class="w-full px-5 py-3 bg-white border border-slate-200 rounded-xl font-bold text-sm focus:bg-white focus:border-blue-500 transition"></textarea>
+                            <p class="text-[11px] text-slate-400 font-bold leading-relaxed">
+                                ※ URLがない場合や、チラシ・資料をお持ちの場合は
+                                <a href="https://gigafile.nu/" target="_blank" rel="noopener" class="text-blue-600 underline underline-offset-2 hover:text-blue-800">ギガファイル便</a>
+                                等でファイルをアップロードし、発行されたURLをご記入ください。
+                            </p>
                         </div>
                         <div class="grid sm:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-xs font-black text-blue-900 uppercase tracking-widest mb-2 font-black text-blue-900">お名前 <span class="text-orange-500 ml-1">＊</span></label>
+                                <label class="block text-xs font-black text-blue-900 uppercase tracking-widest mb-2">お名前 <span class="text-orange-500 ml-1">＊</span></label>
                                 <input type="text" name="お名前" required placeholder="例：山田 太郎" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold text-sm focus:bg-white focus:border-blue-500 transition">
                             </div>
                             <div>
-                                <label class="block text-xs font-black text-blue-900 uppercase tracking-widest mb-2 font-black text-blue-900">メールアドレス <span class="text-orange-500 ml-1">＊</span></label>
+                                <label class="block text-xs font-black text-blue-900 uppercase tracking-widest mb-2">メールアドレス <span class="text-orange-500 ml-1">＊</span></label>
                                 <input type="email" name="メールアドレス" required placeholder="example@mail.com" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold text-sm focus:bg-white focus:border-blue-500 transition">
                             </div>
                         </div>
+
+                        <!-- MTG日時候補（新規） -->
+                        <div class="bg-blue-50 border border-blue-100 rounded-2xl p-5 space-y-4">
+                            <p class="text-xs font-black text-blue-900 uppercase tracking-widest flex items-center gap-2">
+                                📅 オンラインMTGのご希望日時（候補）
+                                <span class="text-orange-500 ml-1">＊</span>
+                            </p>
+                            <p class="text-[11px] text-blue-600 font-bold -mt-2">
+                                本日より1週間後以降の日程で、3つほどご提示ください。
+                            </p>
+                            <!-- 候補1 -->
+                            <div>
+                                <label class="block text-[11px] font-black text-blue-800 mb-1">第1希望</label>
+                                <div class="datetime-row">
+                                    <input type="date" name="MTG第1希望_日付" required
+                                        class="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl font-bold text-sm focus:border-blue-500 transition text-slate-700">
+                                    <select name="MTG第1希望_時間帯" required
+                                        class="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl font-bold text-sm focus:border-blue-500 transition text-slate-700">
+                                        <option value="" disabled selected>時間帯を選ぶ</option>
+                                        <option>午前（10:00〜12:00）</option>
+                                        <option>午後①（13:00〜15:00）</option>
+                                        <option>午後②（15:00〜17:00）</option>
+                                        <option>夜（19:00〜21:00）</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- 候補2 -->
+                            <div>
+                                <label class="block text-[11px] font-black text-blue-800 mb-1">第2希望</label>
+                                <div class="datetime-row">
+                                    <input type="date" name="MTG第2希望_日付"
+                                        class="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl font-bold text-sm focus:border-blue-500 transition text-slate-700">
+                                    <select name="MTG第2希望_時間帯"
+                                        class="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl font-bold text-sm focus:border-blue-500 transition text-slate-700">
+                                        <option value="" selected>時間帯を選ぶ</option>
+                                        <option>午前（10:00〜12:00）</option>
+                                        <option>午後①（13:00〜15:00）</option>
+                                        <option>午後②（15:00〜17:00）</option>
+                                        <option>夜（19:00〜21:00）</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- 候補3 -->
+                            <div>
+                                <label class="block text-[11px] font-black text-blue-800 mb-1">第3希望</label>
+                                <div class="datetime-row">
+                                    <input type="date" name="MTG第3希望_日付"
+                                        class="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl font-bold text-sm focus:border-blue-500 transition text-slate-700">
+                                    <select name="MTG第3希望_時間帯"
+                                        class="w-full px-4 py-3 bg-white border border-blue-200 rounded-xl font-bold text-sm focus:border-blue-500 transition text-slate-700">
+                                        <option value="" selected>時間帯を選ぶ</option>
+                                        <option>午前（10:00〜12:00）</option>
+                                        <option>午後①（13:00〜15:00）</option>
+                                        <option>午後②（15:00〜17:00）</option>
+                                        <option>夜（19:00〜21:00）</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
                         <div>
-                            <label class="block text-xs font-black text-blue-900 uppercase tracking-widest mb-2 font-black text-blue-900">お問い合わせ内容 <span class="text-orange-500 ml-1">＊</span></label>
-                            <textarea name="内容" required rows="5" placeholder="ご相談内容をご記入ください。" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold text-sm focus:bg-white focus:border-blue-500 transition font-bold"></textarea>
+                            <label class="block text-xs font-black text-blue-900 uppercase tracking-widest mb-2">お問い合わせ内容 <span class="text-orange-500 ml-1">＊</span></label>
+                            <textarea name="内容" required rows="4" placeholder="ご相談内容をご記入ください。（例：塾の概要、希望のデザインイメージなど）" class="w-full px-5 py-4 bg-slate-50 border border-slate-100 rounded-xl font-bold text-sm focus:bg-white focus:border-blue-500 transition"></textarea>
                         </div>
                         <div id="form-message" class="hidden p-4 rounded-xl font-bold text-sm text-center"></div>
-                        <button type="submit" id="submit-btn" class="w-full bg-blue-900 text-white py-5 rounded-xl font-black text-lg shadow-xl hover:bg-blue-800 transition active:scale-[0.98] flex items-center justify-center gap-3 font-black text-white font-black text-white text-white text-white text-white text-white">
+                        <button type="submit" id="submit-btn" class="w-full bg-blue-900 text-white py-5 rounded-xl font-black text-lg shadow-xl hover:bg-blue-800 transition active:scale-[0.98] flex items-center justify-center gap-3">
                             <span>この内容で送信する</span>
                             <div id="loading-spinner" class="hidden w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
                         </button>
@@ -411,13 +572,13 @@
     </section>
 
     <!-- フッター -->
-    <footer class="bg-slate-50 py-12 px-4 border-t border-slate-200 text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left text-center md:text-left">
+    <footer class="bg-slate-50 py-12 px-4 border-t border-slate-200 text-center md:text-left">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
             <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-blue-900 rounded flex items-center justify-center text-white font-black text-[10px] text-white text-white text-white text-white">N</div>
-                <span class="font-black text-slate-900 text-lg italic tracking-tighter uppercase font-black text-slate-900 text-slate-900 text-slate-900 text-slate-900">塾HPナビ | 学習塾専門ホームページ制作所</span>
+                <div class="w-6 h-6 bg-blue-900 rounded flex items-center justify-center text-white font-black text-[10px]">N</div>
+                <span class="font-black text-slate-900 text-lg italic tracking-tighter uppercase">塾HPナビ | 学習塾専門ホームページ制作所</span>
             </div>
-            <div class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em] text-slate-400 font-bold text-slate-400 font-bold text-slate-400 font-bold text-slate-400 font-bold">
+            <div class="text-slate-400 text-[10px] font-bold uppercase tracking-[0.3em]">
                 &copy; 2026 塾HPナビ | 学習塾専門ホームページ制作所.
             </div>
         </div>
@@ -430,6 +591,14 @@
         const spinner = document.getElementById('loading-spinner');
         const formMessage = document.getElementById('form-message');
 
+        // 日付inputの最小値を本日より7日後に設定
+        const minDate = new Date();
+        minDate.setDate(minDate.getDate() + 7);
+        const minDateStr = minDate.toISOString().split('T')[0];
+        document.querySelectorAll('input[type="date"]').forEach(el => {
+            el.min = minDateStr;
+        });
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             submitBtn.disabled = true;
@@ -439,7 +608,7 @@
             const formData = new FormData(form);
             try {
                 await fetch(GAS_URL, { method: 'POST', body: formData });
-                formMessage.textContent = 'お問い合わせを受け付けました。順次返信いたします。';
+                formMessage.textContent = 'お問い合わせを受け付けました。MTG日程を確認の上、順次ご連絡いたします。';
                 formMessage.className = 'p-4 rounded-xl font-bold text-sm text-center bg-green-50 text-green-700 mt-6';
                 formMessage.classList.remove('hidden');
                 form.reset();
