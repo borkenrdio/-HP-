@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://juku-hp-navi.com/sitemap.xml
